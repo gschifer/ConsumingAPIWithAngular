@@ -1,0 +1,30 @@
+.container {
+    width: 85%;
+    margin: auto;    
+    justify-content: space-between;
+}
+
+.cards {
+    display: flex;
+}
+
+mat-card {
+    margin-left: 5%;
+}
+
+.card-associado {
+    margin-top: 5%;
+    width: 30%;
+}
+
+
+.card-associado:hover{
+    transform: scale(1.05);
+    transition: 0.4s ease;
+}
+.actions {
+    display: flex;
+    width: 35%;
+    justify-content: space-between;
+    text-align: end;
+}
