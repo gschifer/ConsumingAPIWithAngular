@@ -4,6 +4,9 @@
     justify-content: space-between;
 }
 
+.container button {
+    margin-top: 2%;
+}
 .cards {
     display: flex;
 }

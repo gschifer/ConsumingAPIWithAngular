@@ -32,11 +32,13 @@ export class UpdateComponent implements OnInit {
 
   getAssociadoById(id: any): void {
     this.service.getAssociadoById(id).subscribe((response) => {
-      this.associado = response;
+      this.associado.cpf = response.cpf;
+      this.associado.nome = response.nome;
+      this.associado.email = response.email;
     }), (erro: any) => {
       console.log(erro)
       this.service.message("Falha ao tentar buscar associado.");
-      this.router.navigate(['']);
+      this.router.navigate([""]);
     };
   }
 
@@ -44,11 +46,10 @@ export class UpdateComponent implements OnInit {
     console.log(this.associado)
     this.service.updateAssociado(this.associado).subscribe((response) => {
       this.service.message('Associado atualizado com sucesso!');
-      this.router.navigate(['']);
+      this.router.navigate([""]);
     }), (erro: any) => {
-      console.log(erro)
       this.service.message("Falha ao tentar atualizar associado.");
-      this.router.navigate(['']);
+      this.router.navigate([""]);
     };
 
   }
