@@ -27,7 +27,7 @@ export class BodyComponent implements OnInit {
   deleteAssociado(id: any): void {
     this.service.deleteAssociado(id).subscribe((response) => {
       this.service.message( "Associado removido.");
-      this.getAll();
+      this.associados = this.associados.filter( associado => associado.id !== id);
     })
   }
 }

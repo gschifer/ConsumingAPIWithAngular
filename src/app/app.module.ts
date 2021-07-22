@@ -1,3 +1,7 @@
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatInputModule } from '@angular/material/input';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
@@ -13,6 +17,7 @@ import { BodyComponent } from './components/body/body.component';
 import {MatCardModule} from '@angular/material/card';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { UpdateComponent } from './components/update/update.component';
+import { CreateComponent } from './components/create/create.component';
 
 
 
@@ -21,7 +26,8 @@ import { UpdateComponent } from './components/update/update.component';
     AppComponent,
     HeaderComponent,
     BodyComponent,
-    UpdateComponent
+    UpdateComponent,
+    CreateComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +38,12 @@ import { UpdateComponent } from './components/update/update.component';
     MatIconModule,
     MatCardModule,
     HttpClientModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    FormsModule,
+    MatInputModule,
+    MatNativeDateModule,
+    MatDatepickerModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

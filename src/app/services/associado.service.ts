@@ -20,17 +20,27 @@ export class AssociadoService {
 
   constructor(private http: HttpClient, private snack: MatSnackBar) { }
 
+  getAssociadoById(id: any): Observable<Associado> {
+    const url = `${this.baseUrl}/${id}`;
+    return this.http.get<Associado>(url, this.httpOptions);
+  }
+
   getAll(): Observable<Associado[]> {
     return this.http.get<Associado[]>(this.baseUrl, this.httpOptions);
   }
 
-  editAssociado(): Observable<Associado> {
-    return this.http.put<Associado>(this.baseUrl, this.httpOptions);
+  updateAssociado(associado: Associado): Observable<Associado> {
+    const url = `${this.baseUrl}/${associado.id}`;
+    return this.http.put<Associado>(url, associado, this.httpOptions);
   }
 
   deleteAssociado(id: any): Observable<void> {
     const url = `${this.baseUrl}/${id}`;
     return this.http.delete<void>(url, this.httpOptions);
+  }
+
+  createAssociado(associado: Associado): Observable<Associado> {
+    return this.http.post<Associado>(this.baseUrl, associado, this.httpOptions);
   }
 
   message(msg: String): void {
